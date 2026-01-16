@@ -125,7 +125,7 @@ while True:
         sketch.write("Botbit : {}    Player: {}".format(
             left_player, right_player), align="center",
             font=("Courier", 24, "normal"))
-    
+
     #binding left paddle to the ball 
 
     if left_pad.ycor() != hit_ball.ycor():
