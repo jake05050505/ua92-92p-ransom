@@ -13,7 +13,7 @@ os.chdir("encrypt_test")
 def encrypt_random() -> bool:
     files = os.listdir()
     files = [file for file in files if os.path.isfile(file)]
-    print(files)
+
     random_index = random.randint(0,len(files)-1)
     file = files[random_index]
 
@@ -57,12 +57,12 @@ def decrypt_all():
             with open(file, 'wb') as f:
                 f.write(decrypted_content)
 
-register = {
-    "1":encrypt_random,
-    "2":decrypt_all,
-}
-
 def main():
+    register = {
+        "1":encrypt_random,
+        "2":decrypt_all,
+    }
+
     try:
         choice = input("1 = encrypt random\n2 = decrypt all\n$ ")
         func = register.get(choice)
